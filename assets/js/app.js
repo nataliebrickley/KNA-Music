@@ -44,13 +44,14 @@ $("#submit").on("click", function () {
             //get the venue, put it in a p tag, and append to the page:
             var venue = $("<p>").text("Venue: " + eventsArray[0]._embedded.venues[0].name)
             $("#venue").append(venue)
-            //get the date
+            //get the date and format it
             var date = eventsArray[0].dates.start.localDate
+            var formatDate = moment(date).format("MMMM Do YYYY")
             //get the time, and convert from military time to normal time
             var time = eventsArray[0].dates.start.localTime
             var formatTime = moment(time, 'HH:mm').format('hh:mm a')
             //append date/time to the page
-            var p = $("<p>").text("Date: " + date + " at " + formatTime)
+            var p = $("<p>").text("Date: " + formatDate + " at " + formatTime)
             $('#date').append(p);
             //seat map url:
             var seatMap = $("<a>").attr({ "href": eventsArray[0].seatmap.staticUrl, "target": "_blank" }).text("Seat Map")
