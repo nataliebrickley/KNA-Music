@@ -1,16 +1,27 @@
 body{
     background-color:black
 }
+.col-md-3 {
+    float: left;
+    
+}
 
+/* .col-sm-4 {
+    float: left;
+} */
 .artist-buttons{
     float: right;
 }
 
-#map {
-    width:400px;
-    height:auto
-}
 #eventImage {
     width: 286px;
     height: auto;
 }
+img {
+    width:300px;
+    height:auto
+}
+ #map{
+    position: relative;
+    top: 50px
+ }
