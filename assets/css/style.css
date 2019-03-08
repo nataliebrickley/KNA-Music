@@ -1,0 +1,12 @@
+body{
+    background-color:black
+}
+
+.artist-buttons{
+    float: right;
+}
+
+img {
+    width:400px;
+    height:auto
+}
