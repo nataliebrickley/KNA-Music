@@ -6,7 +6,11 @@ body{
     float: right;
 }
 
-img {
+#map {
     width:400px;
     height:auto
+}
+#eventImage {
+    width: 300px;
+    height: auto;
 }
