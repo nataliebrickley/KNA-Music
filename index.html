@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style src="assets/css.style.css"></style>
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href= "assets/css/style.css">
+    <!--Jquery-->
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -15,8 +23,8 @@
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand">KNA MUSIC</a>
         <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="artist">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="submit">Search</button>
         </form>
     </nav>
     <br>
@@ -26,21 +34,21 @@
             <!-- This is our information container with info on top and links on bottom -->
             <div class="col-sm-2"></div>
             <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
+                <div id="image"></div>
                 <div class="card-body">
                     <h5 class="card-title">Ticket Master Info</h5>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
                         card's content.</p>
                 </div>
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Venue location</li>
-                    <li class="list-group-item">Dates</li>
+                    <li class="list-group-item" id="venue"><b>Venue location: </b></li>
+                    <li class="list-group-item" id="date"><b>Date: </b></li>
                     <li class="list-group-item"></li>
                 </ul>
                 <!-- Links to Wikipida and Ticketmaster-->
                 <div class="card-body">
                     <a href="#" class="card-link">Link to band Wiki</a>
-                    <a href="#" class="card-link">Link to purchase info</a>
+                    <a href="" class="card-link" id="getTix" target="_blank">Get Tickets</a>
                 </div>
             </div>
         </div>
