@@ -13,6 +13,10 @@ body{
     float: right;
 }
 
+#eventImage {
+    width: 286px;
+    height: auto;
+}
 img {
     width:300px;
     height:auto
