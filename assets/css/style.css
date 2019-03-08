@@ -1,12 +1,23 @@
 body{
     background-color:black
 }
+.col-md-3 {
+    float: left;
+    
+}
 
+/* .col-sm-4 {
+    float: left;
+} */
 .artist-buttons{
     float: right;
 }
 
 img {
-    width:400px;
+    width:300px;
     height:auto
 }
+ #map{
+    position: relative;
+    top: 50px
+ }
