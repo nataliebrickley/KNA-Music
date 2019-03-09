@@ -8,6 +8,7 @@ $("#submit").on("click", function () {
     $("#venue").empty();
     $("#image").empty();
     $("#date").empty();
+    $("#info").empty();
     //get the search input and create api url
     var keyword = $("#artist").val().trim()
     var apiKey = "3mMDHc6bID67MAw2IOA8EkaoYav83WWr";
@@ -42,7 +43,7 @@ $("#submit").on("click", function () {
             var image = $("<img>").attr({ "src": imageUrl, "id": "eventImage" })
             $("#image").append(image)
             //get the venue, put it in a p tag, and append to the page:
-            var venue = $("<p>").text("Venue: " + eventsArray[0]._embedded.venues[0].name)
+            var venue = $("<p>").html("<b>Venue:</b> " + eventsArray[0]._embedded.venues[0].name)
             $("#venue").append(venue)
             //get the date and format it
             var date = eventsArray[0].dates.start.localDate
@@ -51,7 +52,7 @@ $("#submit").on("click", function () {
             var time = eventsArray[0].dates.start.localTime
             var formatTime = moment(time, 'HH:mm').format('hh:mm a')
             //append date/time to the page
-            var p = $("<p>").text("Date: " + formatDate + " at " + formatTime)
+            var p = $("<p>").html("<b>Date:</b> " + formatDate + " at " + formatTime)
             $('#date').append(p);
             //seat map url:
             var seatMap = $("<a>").attr({ "href": eventsArray[0].seatmap.staticUrl, "target": "_blank" }).text("Seat Map")

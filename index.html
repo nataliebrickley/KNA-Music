@@ -20,11 +20,11 @@
 
 <body>
     <!--This is our nav bar-->
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar">
         <a class="navbar-brand">KNA MUSIC</a>
         <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="artist">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="submit">Search</button>
+            <input class="form-control mr-sm-2" type="search" placeholder="Search Artist" aria-label="Search" id="artist">
+            <button class="btn my-2 my-sm-0" type="submit" id="submit">Search</button>
         </form>
     </nav>
     <br>
@@ -32,21 +32,23 @@
     <div class="main-container">
 
         <div class="row">
+            <!--Empty column-->
+            <div class="col-md-2"></div>
             <!-- This is our information container with info on top and links on bottom -->
-            <div class="col-sm-2">
-                <div class="card" style="width: 18rem;">
+            <div class="col-sm-5">
+                <div class="card purple" style="width: 400px;">
                     <div id="image"></div>
                     <div class="card-body">
                         <h5 class="card-title" id="eventName">Ticket Master Info</h5>
                         <p class="card-text" id="info"></p>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item" id="venue"><b>Venue location: </b></li>
-                        <li class="list-group-item" id="date"><b>Date: </b></li>
-                        <li class="list-group-item"></li>
+                        <li class="list-group-item purple" id="venue"><b>Venue location: </b></li>
+                        <li class="list-group-item purple" id="date"><b>Date: </b></li>
+                        <li class="list-group-item purple"></li>
                     </ul>
                     <!-- Links to Wikipida and Ticketmaster-->
-                    <div class="card-body">
+                    <div class="card-body text-center">
                         <a href="#" class="card-link">Link to band Wiki</a>
                         <a href="" class="card-link" id="getTix" target="_blank">Get Tickets</a>
                     </div>
@@ -54,7 +56,7 @@
             </div>
 
 
-            <div class="col-md-3 offset-md-3">
+            <div class="col-md-3">
                 <div id="artist-buttons">
                     <button class="">artist</button>
                     <button class="">artist</button>
