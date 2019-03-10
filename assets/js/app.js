@@ -9,10 +9,12 @@ $("#submit").on("click", function () {
     $("#image").empty();
     $("#date").empty();
     $("#info").empty();
+    $("#city").empty();
     //get the search input and create api url
+    var citySearch = $("#citySearch").val().trim()
     var keyword = $("#artist").val().trim()
     var apiKey = "3mMDHc6bID67MAw2IOA8EkaoYav83WWr";
-    var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + keyword + "&apikey=" + apiKey
+    var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + keyword + "&city=" + citySearch + "&apikey=" + apiKey
     //make api request
     $.ajax({
         url: apiUrl,
@@ -45,6 +47,11 @@ $("#submit").on("click", function () {
             //get the venue, put it in a p tag, and append to the page:
             var venue = $("<p>").html("<b>Venue:</b> " + eventsArray[0]._embedded.venues[0].name)
             $("#venue").append(venue)
+            //get the city, put it in a p tag, and append to the page:
+            var city = eventsArray[0]._embedded.venues[0].city.name;
+            var state = eventsArray[0]._embedded.venues[0].state.stateCode;
+            var location = $("<p>").html("<b>City:</b> " + city + ", " + state)
+            $("#city").append(location)
             //get the date and format it
             var date = eventsArray[0].dates.start.localDate
             var formatDate = moment(date).format("MMMM Do YYYY")
