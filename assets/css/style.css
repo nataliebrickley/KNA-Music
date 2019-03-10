@@ -27,7 +27,8 @@ img {
 }
  #map{
     position: relative;
-    top: 50px
+    top: 50px;
+    height: 300px;
  }
  .row {
      margin: 0 auto;
@@ -57,4 +58,10 @@ img {
 }
 .card-title {
     text-align: center;
+}
+.welcome {
+    margin: 0 auto;
+    margin-top: 20px;
+    background: rgba(256, 256, 256, .7)
+
 }

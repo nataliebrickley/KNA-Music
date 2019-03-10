@@ -1,4 +1,10 @@
-
+$("#submit").on("click", function (event) {
+    event.preventDefault()
+    var userInput = $("#artist").val();
+    var newButton = $('<button>').text(userInput);
+    $("#artist-buttons").append(newButton);
+    console.log("clicked")
+})
 //when the user clicks the submit button...
 $("#submit").on("click", function () {
     //prevent the page from refreshing
