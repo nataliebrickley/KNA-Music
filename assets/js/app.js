@@ -3,6 +3,11 @@ $("#submit").on("click", function (event) {
     var userInput = $("#artist").val();
     var newButton = $('<button>').text(userInput);
     $("#artist-buttons").append(newButton);
+
+})
+
+=======
+    console.log("clicked")
 })
 
 //when the user clicks the submit button...
