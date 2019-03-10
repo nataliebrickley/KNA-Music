@@ -1,11 +1,14 @@
 body{
-    background-color:black
+    background-color: #651e3e
 }
 .col-md-3 {
     float: left;
     
 }
-
+.purple {
+    background: #451e3e;
+    color: white;
+}
 /* .col-sm-4 {
     float: left;
 } */
@@ -14,14 +17,44 @@ body{
 }
 
 #eventImage {
-    width: 286px;
+    width: 300px;
     height: auto;
 }
 img {
     width:300px;
-    height:auto
+    height:auto;
+    margin-top: 10px;
 }
  #map{
     position: relative;
     top: 50px
  }
+ .row {
+     margin: 0 auto;
+ }
+ #image {
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+ }
+ .navbar {
+     background: #251e3e ;
+     color: white
+ }
+#submit {
+    color: white;
+    border: 1px solid white;
+}
+.card-link {
+    background:	 #163277;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    display: inline-block;
+}
+.card-link:hover {
+    color: navajowhite;
+}
+.card-title {
+    text-align: center;
+}
