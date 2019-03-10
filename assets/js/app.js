@@ -32,36 +32,42 @@ $("#submit").on("click", function () {
                     var imageUrl = imageArray[i].url
                     return imageUrl
                 }
-                else { 
+                else {
                     var imageUrl = imageArray[1].url
                     return imageUrl
                 }
             }
-            }
-            var imageUrl = getImage(imageArray)
-            var image = $("<img>").attr({ "src": imageUrl, "id": "eventImage" })
-            $("#image").append(image)
-            //get the venue, put it in a p tag, and append to the page:
-            var venue = $("<p>").text("Venue: " + eventsArray[0]._embedded.venues[0].name)
-            $("#venue").append(venue)
-            //get the date and format it
-            var date = eventsArray[0].dates.start.localDate
-            var formatDate = moment(date).format("MMMM Do YYYY")
-            //get the time, and convert from military time to normal time
-            var time = eventsArray[0].dates.start.localTime
-            var formatTime = moment(time, 'HH:mm').format('hh:mm a')
-            //append date/time to the page
-            var p = $("<p>").text("Date: " + formatDate + " at " + formatTime)
-            $('#date').append(p);
-            //seat map url:
-            var seatMap = $("<a>").attr({ "href": eventsArray[0].seatmap.staticUrl, "target": "_blank" }).text("Seat Map")
-            $("#venue").append(seatMap)
-            //get ticketmaster url
-            var tickets = eventsArray[0].url
-            $("#getTix").attr("href", tickets);
-            //get info about event
-            var info = $("<p>").text(eventsArray[0].info)
-            $("#info").append(info)
-        })
+        }
+        var imageUrl = getImage(imageArray)
+        var image = $("<img>").attr({ "src": imageUrl, "id": "eventImage" })
+        $("#image").append(image)
+        //get the venue, put it in a p tag, and append to the page:
+        var venue = $("<p>").text("Venue: " + eventsArray[0]._embedded.venues[0].name)
+        $("#venue").append(venue)
+        //get the date and format it
+        var date = eventsArray[0].dates.start.localDate
+        var formatDate = moment(date).format("MMMM Do YYYY")
+        //get the time, and convert from military time to normal time
+        var time = eventsArray[0].dates.start.localTime
+        var formatTime = moment(time, 'HH:mm').format('hh:mm a')
+        //append date/time to the page
+        var p = $("<p>").text("Date: " + formatDate + " at " + formatTime)
+        $('#date').append(p);
+        //seat map url:
+        var seatMap = $("<a>").attr({ "href": eventsArray[0].seatmap.staticUrl, "target": "_blank" }).text("Seat Map")
+        $("#venue").append(seatMap)
+        //get ticketmaster url
+        var tickets = eventsArray[0].url
+        $("#getTix").attr("href", tickets);
+        //get info about event
+        var info = $("<p>").text(eventsArray[0].info)
+        $("#info").append(info)
+    })
+})
+ // this will add buttons to the page linked to the artist info
+$("#submit").on("click", function (event) {
+    event.preventDefault();
+    var userInput = $("#artist").val().trim();
+    //var newButton = 
 })
 

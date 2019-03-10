@@ -16,80 +16,67 @@
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <!--Moment.js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-</head>
+    <!--Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+    
+</head >
 
-<body>
-    <!--This is our nav bar-->
+            <body>
+                <!--This is our nav bar-->
     <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand">KNA MUSIC</a>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="artist">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="submit">Search</button>
+                    <a class="navbar-brand">KNA MUSIC</a>
+                    <form class="form-inline">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="artist">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="submit">Search</button>
         </form>
     </nav>
-    <br>
+                    <br>
 
-    <div class="main-container">
+                        <div class="main-container">
 
-        <div class="row">
-            <!-- This is our information container with info on top and links on bottom -->
+                            <div class="row">
+                                <!-- This is our information container with info on top and links on bottom -->
             <div class="col-sm-2">
-                <div class="card" style="width: 18rem;">
-                    <div id="image"></div>
+                                    <div class="card" style="width: 18rem;">
+                                        <div id="image"></div>
+                                        <div class="card-body">
+                                            <h5 class="card-title" id="eventName">Ticket Master Info</h5>
+                                            <p class="card-text" id="info"></p>
+                                        </div>
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item" id="venue"><b>Venue location: </b></li>
+                                            <li class="list-group-item" id="date"><b>Date: </b></li>
+                                            <li class="list-group-item"></li>
+                                        </ul>
+                                        <!-- Links to Wikipida and Ticketmaster-->
                     <div class="card-body">
-                        <h5 class="card-title" id="eventName">Ticket Master Info</h5>
-                        <p class="card-text" id="info"></p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item" id="venue"><b>Venue location: </b></li>
-                        <li class="list-group-item" id="date"><b>Date: </b></li>
-                        <li class="list-group-item"></li>
-                    </ul>
-                    <!-- Links to Wikipida and Ticketmaster-->
-                    <div class="card-body">
-                        <a href="#" class="card-link">Link to band Wiki</a>
-                        <a href="" class="card-link" id="getTix" target="_blank">Get Tickets</a>
-                    </div>
+                                            <a href="#" class="card-link">Link to band Wiki</a>
+                                            <a href="" class="card-link" id="getTix" target="_blank">Get Tickets</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-3 offset-md-3">
+                                    <div id="">
+                                        <!-- Buttons will be placed here-->
+                    <form id="artist-buttons">
+
+
+                                            <!-- <div id="map"></div> -->
+                        <img id="map"
+                                                src="https://camo.githubusercontent.com/6f53eeb8108ef87ccdb03ef0a8f51e9368be6e3a/68747470733a2f2f676f6f676c656d6170732e6769746875622e696f2f6a732d6d61702d6c6162656c2f73637265656e73686f742e706e67">
+
+
+                    </form>
                 </div>
-            </div>
-
-
-            <div class="col-md-3 offset-md-3">
-                <div id="artist-buttons">
-                    <button class="">artist</button>
-                    <button class="">artist</button>
-                    <button class="">artist</button>
-                    <!-- <div id="map"></div> -->
-                    <img id="map"
-                    src="https://camo.githubusercontent.com/6f53eeb8108ef87ccdb03ef0a8f51e9368be6e3a/68747470733a2f2f676f6f676c656d6170732e6769746875622e696f2f6a732d6d61702d6c6162656c2f73637265656e73686f742e706e67">
-<!-- <div id="map"></div> -->
-
-                </div>
-            </div>
-
-            <div class="col-sm-4">
-                
-                
-            </div>
-
-
-            <div class="row">
-                <!-- This is our information container with info on top and links on bottom -->
-
-
-                <!-- Links to Wikipida and Ticketmaster-->
-
-            </div>
-
-        </div>
-    </div>
-
-    </div>
+                                    </div>
+                                </div>
+                            </div>
 
 
 
-
-    <script src="assets/js/app.js"></script>
-</body>
+                            <script src="assets/js/app.js"></script>
+    </body>
 
 </html>
