@@ -7,8 +7,6 @@ $("#submit").on("click", function (event) {
 })
 
 
-   
-
 //when the user clicks the submit button...
 $("#submit").on("click", function () {
     //prevent the page from refreshing
@@ -26,6 +24,9 @@ $("#submit").on("click", function () {
     var keyword = $("#artist").val().trim()
     var apiKey = "3mMDHc6bID67MAw2IOA8EkaoYav83WWr";
     var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + keyword + "&city=" + citySearch + "&apikey=" + apiKey
+
+
+var array = ""
     //make api request
     $.ajax({
         url: apiUrl,
@@ -81,10 +82,8 @@ $("#submit").on("click", function () {
         //get info about event
         var info = $("<p>").text(eventsArray[0].info)
         $("#info").append(info)
-
     })
-    
-    
+
 
 })
 
