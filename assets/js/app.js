@@ -1,45 +1,11 @@
-// Psuedo Code KNA Music Project
-
-// create one js file to deal with:
-    // initial page
-        // add event listener for main page submit button
-        // on.click -> 
-            // capture the text in the input form and feed it to firebase
-            // open our main content page   
-    
-// Main Content Page
-    // populate the page with pregenerated buttons
-        // could TM feed us info on similar artists to populate our buttons with?     
-    // add a button for the search term used on initial page - get the info from firebase
-    // populate #main-content with information about the search term used on the initial page
-        // Title of artist/band
-        // Info on 3-5 next shows
-            // date, venue, time permitting info from a wiki api
-            // link to buy tickets for each show - tmAPI 
-        // If you click the venue name (or create a button for this),
-            // capture the venue address or perhaps just name and feed it to the googleAPI
-            // change the img card/container/div to be a google map of the venue location 
-    // add an img from tm API of the artist to the page 
-        // this img will turn into the map when the venue button is clicked on 
-
-        // listen for search click 
-
-// // Google Map API practice //
-// var map;
-// function initMap() {
-//     map = new google.maps.Map(document.getElementById('map'), {
-//         center: {lat: -34.397, lng: 150.644},
-//         zoom: 8
-//     });
-//     }    
+var venue = "";
 
 $("#submit").on("click", function (event) {
     event.preventDefault()
     var userInput = $("#artist").val();
     var newButton = $('<button>').text(userInput);
     $("#artist-buttons").append(newButton);
-
-})
+});
 
 
    
@@ -91,13 +57,20 @@ $("#submit").on("click", function () {
         var image = $("<img>").attr({ "src": imageUrl, "id": "eventImage" })
         $("#image").append(image)
         //get the venue, put it in a p tag, and append to the page:
-        var venue = $("<p>").html("<b>Venue:</b> " + eventsArray[0]._embedded.venues[0].name)
-        $("#venue").append(venue)
+        // saving the lat and lng as data-lat and data-lng to be used by gmaps
+        venue = $("<p>").html("<b>Venue:</b> " + eventsArray[0]._embedded.venues[0].name)
+        venue.attr("data-lat", eventsArray[0]._embedded.venues[0].location.latitude);
+        venue.attr("data-lng", eventsArray[0]._embedded.venues[0].location.longitude);
+        latitude = parseFloat(eventsArray[0]._embedded.venues[0].location.latitude);
+        longitude = parseFloat(eventsArray[0]._embedded.venues[0].location.longitude);
+        console.log("latitdue: " + latitude + " Longitude: " + longitude);
+        venue.attr("id", "venue");
+        $("#venue").append(venue);    
         //get the city, put it in a p tag, and append to the page:
         var city = eventsArray[0]._embedded.venues[0].city.name;
         var state = eventsArray[0]._embedded.venues[0].state.stateCode;
-        var location = $("<p>").html("<b>City:</b> " + city + ", " + state)
-        $("#city").append(location)
+        var location = $("<p>").html("<b>City:</b> " + city + ", " + state);
+        $("#city").append(location);
         //get the date and format it
         var date = eventsArray[0].dates.start.localDate
         var formatDate = moment(date).format("MMMM Do YYYY")
