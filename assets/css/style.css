@@ -30,6 +30,8 @@ img {
     top: 50px;
     height: 450px;
     width: 450px;
+    border: 5px solid black;
+    border-radius: 10px;
  }
  .row {
      margin: 0 auto;
@@ -66,12 +68,31 @@ img {
     background: rgba(256, 256, 256, .7);
     padding: 10px;
     border-radius: 2%;
+    align-content: center
 }
 .welcome input {
     margin: 10px auto;
-    width: 470px;
+    width: 75%;
 }
 .welcome #submit{
     color: black;
     border: 1px solid black;
 }
+
+
+#buttonInfo {
+    background: #10377a;
+    color: white;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px; 
+    border-radius: 10px;
+}
+#homeSearch {
+    color: white;
+    border: 1px solid black;
+    width: 200px;
+    border-radius: 10px;
+    background: #251e3e
+}
+

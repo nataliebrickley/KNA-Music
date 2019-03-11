@@ -35,6 +35,7 @@ $("#submit").on("click", function (event) {
     $("#date").empty();
     $("#info").empty();
     $("#city").empty();
+    $("#map").empty();
 
 
 
@@ -55,6 +56,7 @@ function ajaxCall() {
         url: apiUrl,
         method: "GET"
     }).then(function (response) {
+
         console.log(response.page.totalPages);
 
         if (response.page.totalPages === 0) {
@@ -84,6 +86,26 @@ function ajaxCall() {
                         var imageUrl = imageArray[1].url
                         return imageUrl
                     }
+
+        console.log(response.page.totalPages)
+        //access the events array
+        var eventsArray = response._embedded.events
+        //get the event name and put it in a p tag:
+        var event = $("<h2>").text(eventsArray[0].name)
+        $("#eventName").append(event)
+        //get an image , put it in an image tag and append to the page
+        //loop through the images until there is one with a width>300
+        var imageArray = eventsArray[0].images
+        function getImage(array) {
+            for (var i = 0; i < imageArray.length; i++) {
+                if (imageArray[i].width >= 300) {
+                    var imageUrl = imageArray[i].url
+                    return imageUrl
+                }
+                else {
+                    var imageUrl = imageArray[1].url
+                    return imageUrl
+
                 }
             }
             var imageUrl = getImage(imageArray)
