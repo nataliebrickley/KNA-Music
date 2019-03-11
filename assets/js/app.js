@@ -1,17 +1,39 @@
+// Send info to Local storage and link to the main page 
+$("#homeSearch").on("click", function(event){
+    event.preventDefault();
+    var storedArtist = $("#artist").val();
+    var storedCity  =  $("#citySearch").val();
+    localStorage.setItem("artist", storedArtist);
+    localStorage.setItem("city", storedCity);
+    console.log(storedArtist)
+    window.location.assign("index.html")
+})
+//get info from local storage and populate on the main page
+var citySearch = localStorage.getItem("city")
+    var keyword = localStorage.getItem("artist")
+    var apiKey = "3mMDHc6bID67MAw2IOA8EkaoYav83WWr";
+    var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + keyword + "&city=" + citySearch + "&apikey=" + apiKey
+    //make api request
+    ajaxCall()
+//
+
+
+// $("#submit").on("click", function (event) {
+//     event.preventDefault()
+//     var userInput = $("#artist").val();
+//     var newButton = $('<button>').text(userInput);
+//     $("#artist-buttons").append(newButton);
+
+// })
 var venue = "";
 
-$("#submit").on("click", function (event) {
-    event.preventDefault()
-    var userInput = $("#artist").val();
-    var newButton = $('<button>').text(userInput);
-    $("#artist-buttons").append(newButton);
-});
+
 
 
    
 
 //when the user clicks the submit button...
-$("#submit").on("click", function () {
+$("#submit").on("click", function (event) {
     //prevent the page from refreshing
     event.preventDefault()
     //clear previous input results:
@@ -23,11 +45,18 @@ $("#submit").on("click", function () {
     $("#city").empty();
 
     //get the search input and create api url
-    var citySearch = $("#citySearch").val().trim()
-    var keyword = $("#artist").val().trim()
-    var apiKey = "3mMDHc6bID67MAw2IOA8EkaoYav83WWr";
-    var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + keyword + "&city=" + citySearch + "&apikey=" + apiKey
+    citySearch = $("#citySearch").val().trim()
+    keyword = $("#artist").val().trim()
+    apiKey = "3mMDHc6bID67MAw2IOA8EkaoYav83WWr";
+    apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + keyword + "&city=" + citySearch + "&apikey=" + apiKey
     //make api request
+    ajaxCall()
+    
+    
+
+})
+
+function ajaxCall() {
     $.ajax({
         url: apiUrl,
         method: "GET"
@@ -93,8 +122,5 @@ $("#submit").on("click", function () {
 
         initMap();
     })
-    
-    
-
-})
+}
 

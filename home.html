@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--CSS-->
     <link rel = "stylesheet" href="assets/css/style.css">
+    <!--Jquery-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!--Moment.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!--Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
 </head>
 <body>
     <!--nav bar-->
@@ -18,13 +25,19 @@
     <!--main content-->
     <div class="container">
         <div class = "row">
-            <div class="col-md-6 welcome">
+            <div class="col-md-6 welcome text-center">
                 <h1>Explore Events from Your Favorite Artists!</h1>
                 <input class="form-control mr-sm-2" type="search" placeholder="Search Artist" aria-label="Search" id="artist">
                 <input class="form-control mr-sm-2" type="search" placeholder="City" aria-label="Search" id="citySearch">
-                <button class="btn my-2 my-sm-0" type="submit" id="submit">Search</button> 
+                <!-- <a href="index.html">
+                    <button class="btn my-2 my-sm-0" type="submit" id="submit">Search</button>
+                </a> -->
+                <input id="homeSearch" type="button"  value="Search" />
+                <!--onclick="window.location.href='index.html';"-->
             </div>
         </div>
     </div>
+    <!--JS-->
+    <script src="assets/js/app.js"></script> 
 </body>
 </html>
