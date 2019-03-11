@@ -93,6 +93,7 @@ function ajaxCall() {
         venue.attr("data-lng", eventsArray[0]._embedded.venues[0].location.longitude);
         latitude = parseFloat(eventsArray[0]._embedded.venues[0].location.latitude);
         longitude = parseFloat(eventsArray[0]._embedded.venues[0].location.longitude);
+        venueName =  eventsArray[0]._embedded.venues[0].name;
         console.log("latitdue: " + latitude + " Longitude: " + longitude);
         venue.attr("id", "venue");
         $("#venue").append(venue);    
@@ -120,6 +121,7 @@ function ajaxCall() {
         var info = $("<p>").text(eventsArray[0].info)
         $("#info").append(info)
 
+        initMap();
     })
 }
 
