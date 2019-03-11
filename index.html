@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html>
-  <head>
+ <html> 
+ <!-- <head>
     <title>Simple Map</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
@@ -32,5 +32,93 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBnIs9SWvCoCykKiXFp_MvafcDjcSrh0DU&callback=initMap"
     async defer></script>
   </body>
-</html>
+</html> -->
+<!-- This is where my code ended -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style src="assets/css.style.css"></style>
+    <!--CSS-->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!--Jquery-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!--Moment.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!--Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
 
+</head>
+
+<body>
+    <!--This is our nav bar-->
+    <nav class="navbar">
+        <a class="navbar-brand">KNA MUSIC</a>
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search Artist" aria-label="Search"
+                id="artist">
+            <input class="form-control mr-sm-2" type="search" placeholder="City" aria-label="Search" id="citySearch">
+            <button class="btn my-2 my-sm-0" type="submit" id="submit">Search</button>
+        </form>
+    </nav>
+    <br>
+
+    <div class="main-container">
+
+        <div class="row">
+            <!--Empty column-->
+            <div class="col-md-2"></div>
+            <!-- This is our information container with info on top and links on bottom -->
+            <div class="col-sm-5">
+                <div class="card purple" style="width: 400px;">
+                    <div id="image"></div>
+                    <div class="card-body">
+                        <h5 class="card-title" id="eventName">Ticket Master Info</h5>
+                        <p class="card-text" id="info"></p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item purple" id="venue"></li>
+                        <li class="list-group-item purple" id="city"></li>
+                        <li class="list-group-item purple" id="date"></li>
+                    </ul>
+                    <!-- Links to Wikipida and Ticketmaster-->
+                    <div class="card-body text-center">
+                        <a href="#" class="card-link">Link to band Wiki</a>
+                        <a href="" class="card-link" id="getTix" target="_blank">Get Tickets</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-3">
+                <div class="row">
+                    <div id="artist-buttons">
+                        <button class="">artist</button>
+                        <button class="">artist</button>
+                        <button class="">artist</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- <div id="map"></div> -->
+                    <img id="map"
+                        src="https://camo.githubusercontent.com/6f53eeb8108ef87ccdb03ef0a8f51e9368be6e3a/68747470733a2f2f676f6f676c656d6170732e6769746875622e696f2f6a732d6d61702d6c6162656c2f73637265656e73686f742e706e67">
+                    <!-- <div id="map"></div> -->
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
