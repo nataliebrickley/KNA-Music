@@ -43,6 +43,7 @@ $("#submit").on("click", function (event) {
     $("#date").empty();
     $("#info").empty();
     $("#city").empty();
+    $("#map").empty();
 
     //get the search input and create api url
     citySearch = $("#citySearch").val().trim()
