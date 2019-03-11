@@ -60,7 +60,7 @@ function ajaxCall() {
         url: apiUrl,
         method: "GET"
     }).then(function (response) {
-        console.log(response)
+        console.log(response.page.totalPages)
         //access the events array
         var eventsArray = response._embedded.events
         //get the event name and put it in a p tag:
