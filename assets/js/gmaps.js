@@ -39,7 +39,3 @@ function initMap() {
 // var script = $("<script scr='https://maps.googleapis.com/maps/api/js?key=AIzaSyBnIs9SWvCoCykKiXFp_MvafcDjcSrh0DU&callback=initMap' async defer>");
 // script.appendTo("#gmap-script");
 // });
-
-$(document).on("click", "#venue", function () {
-    initMap();
-})
