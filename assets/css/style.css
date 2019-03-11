@@ -62,7 +62,16 @@ img {
 }
 .welcome {
     margin: 0 auto;
-    margin-top: 20px;
-    background: rgba(256, 256, 256, .7)
-
+    margin-top: 40px;
+    background: rgba(256, 256, 256, .7);
+    padding: 10px;
+    border-radius: 2%;
+}
+.welcome input {
+    margin: 10px auto;
+    width: 470px;
+}
+.welcome #submit{
+    color: black;
+    border: 1px solid black;
 }
