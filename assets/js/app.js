@@ -1,10 +1,11 @@
+var venue = "";
+
 $("#submit").on("click", function (event) {
     event.preventDefault()
     var userInput = $("#artist").val();
     var newButton = $('<button>').text(userInput);
     $("#artist-buttons").append(newButton);
-
-})
+});
 
 
    
@@ -56,13 +57,20 @@ $("#submit").on("click", function () {
         var image = $("<img>").attr({ "src": imageUrl, "id": "eventImage" })
         $("#image").append(image)
         //get the venue, put it in a p tag, and append to the page:
-        var venue = $("<p>").html("<b>Venue:</b> " + eventsArray[0]._embedded.venues[0].name)
-        $("#venue").append(venue)
+        // saving the lat and lng as data-lat and data-lng to be used by gmaps
+        venue = $("<p>").html("<b>Venue:</b> " + eventsArray[0]._embedded.venues[0].name)
+        venue.attr("data-lat", eventsArray[0]._embedded.venues[0].location.latitude);
+        venue.attr("data-lng", eventsArray[0]._embedded.venues[0].location.longitude);
+        latitude = parseFloat(eventsArray[0]._embedded.venues[0].location.latitude);
+        longitude = parseFloat(eventsArray[0]._embedded.venues[0].location.longitude);
+        console.log("latitdue: " + latitude + " Longitude: " + longitude);
+        venue.attr("id", "venue");
+        $("#venue").append(venue);    
         //get the city, put it in a p tag, and append to the page:
         var city = eventsArray[0]._embedded.venues[0].city.name;
         var state = eventsArray[0]._embedded.venues[0].state.stateCode;
-        var location = $("<p>").html("<b>City:</b> " + city + ", " + state)
-        $("#city").append(location)
+        var location = $("<p>").html("<b>City:</b> " + city + ", " + state);
+        $("#city").append(location);
         //get the date and format it
         var date = eventsArray[0].dates.start.localDate
         var formatDate = moment(date).format("MMMM Do YYYY")
