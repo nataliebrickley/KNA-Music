@@ -15,16 +15,18 @@ database.ref().on("child_added", function (snapshot) {
   // prevents the page from refreshing when clicked
   event.preventDefault();
 
-
+// These are the added buttons
   var performer = snapshot.val().name;
   // var newButton = snapshot.text(performer);
   var p = $("<button id= buttonInfo>").text(snapshot.val().name)
+  p.attr("data-artist", snapshot.val().name);
+  
   $("#artist-buttons").append(p);
 
 });
 
 
-// adding artist Button (keeps adding two buttons)
+// adding artist Button 
 $("#submit").on("click", function (event) {
   //event.preventDefault();
 
@@ -42,6 +44,12 @@ $("#submit").on("click", function (event) {
 
 // connecting button to artist info for quick search
 $(document).on("#buttonInfo", function(){
- 
+  ajaxCall()
 
 });
+// $(document).on("click", "#reset", function (e) {
+//   e.preventDefault();
+//   var buttonId = $(this).attr("#reset");
+//   database.ref("/location/" + "/name/" + buttonId).remove();
+// });
+
