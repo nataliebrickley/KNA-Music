@@ -30,8 +30,6 @@ var venue = "";
 
 
 
-   
-
 //when the user clicks the submit button...
 $("#submit").on("click", function (event) {
     //prevent the page from refreshing
