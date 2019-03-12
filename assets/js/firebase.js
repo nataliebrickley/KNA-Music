@@ -62,7 +62,7 @@ $(document).on("click", "#buttonInfo", function () {
   console.log(citySearch)
   apiKey = "3mMDHc6bID67MAw2IOA8EkaoYav83WWr";
   apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + keyword + "&city=" + citySearch + "&apikey=" + apiKey
-  ajaxCall()
+  ajaxCall();
 });
 
 $(document).on("click", "#reset", function() {
@@ -72,3 +72,4 @@ $(document).on("click", "#reset", function() {
 database.ref().on("child_removed", function(snap) {
   $("#artist-buttons").empty();
 });
+

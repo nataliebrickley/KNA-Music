@@ -66,7 +66,7 @@ function ajaxCall() {
             $("#content-card").show();
             $("#map").show();
             var eventsArray = response._embedded.events;
-
+            console.log(response);
 
             //get the event name and put it in a p tag:
             var event = $("<h2>").text(eventsArray[0].name)
@@ -123,7 +123,6 @@ function ajaxCall() {
             //get info about event
             var info = $("<p>").text(eventsArray[0].info)
             $("#info").append(info)
-
             initMap();
         }
         //access the events array
