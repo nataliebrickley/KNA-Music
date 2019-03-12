@@ -47,7 +47,7 @@ img {
      background: #251e3e ;
      color: white
  }
-#submit {
+.submit {
     color: white;
     border: 1px solid white;
 }
