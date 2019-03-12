@@ -42,7 +42,7 @@ $("#submit").on("click", function (event) {
     citySearch = $("#citySearch").val().trim()
     keyword = $("#artist").val().trim()
     apiKey = "3mMDHc6bID67MAw2IOA8EkaoYav83WWr";
-    apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + keyword + "&city=" + citySearch + "&apikey=" + apiKey
+    apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + keyword + "&city=" + citySearch + "&radius=1000" + "&apikey=" + apiKey
     //make api request
     ajaxCall()
 
@@ -115,7 +115,7 @@ function ajaxCall() {
             var p = $("<p>").html("<b>Date:</b> " + formatDate + " at " + formatTime)
             $('#date').append(p);
             //seat map url:
-            var seatMap = $("<a>").attr({ "href": eventsArray[0].seatmap.staticUrl, "target": "_blank" }).text("Seat Map")
+            var seatMap = $("<a>").attr({ "href": eventsArray[0].seatmap.staticUrl, "target": "_blank", "class": "seatMap" }).text("Seat Map")
             $("#venue").append(seatMap)
             //get ticketmaster url
             var tickets = eventsArray[0].url

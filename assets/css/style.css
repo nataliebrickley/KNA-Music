@@ -6,12 +6,13 @@ body{
     
 }
 .purple {
-    background: #451e3e;
+    background: rgb(22, 2, 38 , .8);
     color: white;
 }
-/* .col-sm-4 {
-    float: left;
-} */
+.purple li {
+    background: rgb(22, 2, 38 , 0);
+    color: white;
+}
 .artist-buttons{
     float: right;
 }
@@ -28,10 +29,11 @@ img {
  #map{
     position: relative;
     top: 50px;
-    height: 450px;
-    width: 450px;
+    height: 400px;
+    width: 400px;
     border: 5px solid black;
     border-radius: 10px;
+    margin: 0 auto;
  }
  .row {
      margin: 0 auto;
@@ -49,12 +51,15 @@ img {
     color: white;
     border: 1px solid white;
 }
-.card-link {
+.card-link, .seatMap {
     background:	 #163277;
     color: white;
     padding: 5px;
     text-align: center;
     display: inline-block;
+}
+.seatMap {
+    margin-left: 38%;
 }
 .card-link:hover {
     color: navajowhite;
@@ -64,14 +69,15 @@ img {
 }
 .welcome {
     margin: 0 auto;
-    margin-top: 40px;
+    margin-top: 15vh;
     background: rgba(256, 256, 256, .7);
     padding: 10px;
     border-radius: 2%;
-    align-content: center
+    text-align: center
 }
 .welcome input {
-    margin: 10px auto;
+    margin-left: 12.5%;
+    margin-top: 15px;
     width: 75%;
 }
 .welcome #submit{
@@ -81,7 +87,7 @@ img {
 
 
 #buttonInfo {
-    background: #10377a;
+    background: #590555;
     color: white;
     border: 1px solid black;
     padding: 5px;
@@ -95,4 +101,19 @@ img {
     border-radius: 10px;
     background: #251e3e
 }
-
+#reset {
+    background:#680e31;
+    color: white;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px; 
+    border-radius: 10px;
+    
+}
+.home {
+    background: url("https://ak5.picdn.net/shutterstock/videos/4863305/thumb/1.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
