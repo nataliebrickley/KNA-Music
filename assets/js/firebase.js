@@ -65,3 +65,10 @@ $(document).on("click", "#buttonInfo", function () {
   ajaxCall()
 });
 
+$(document).on("click", "#reset", function() {
+  database.ref().remove();
+});
+
+database.ref().on("child_removed", function(snap) {
+  $("#artist-buttons").empty();
+});

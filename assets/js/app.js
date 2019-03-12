@@ -42,7 +42,7 @@ $("#submit").on("click", function (event) {
     citySearch = $("#citySearch").val().trim()
     keyword = $("#artist").val().trim()
     apiKey = "3mMDHc6bID67MAw2IOA8EkaoYav83WWr";
-    apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + keyword + "&city=" + citySearch + "&radius=100" + "&apikey=" + apiKey
+    apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + keyword + "&city=" + citySearch + "&radius=1000" + "&apikey=" + apiKey
     //make api request
     ajaxCall()
 
