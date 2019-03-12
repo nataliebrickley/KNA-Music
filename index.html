@@ -37,6 +37,45 @@
                     <!--onclick="window.location.href='index.html';"-->
                 </form>
 
+    <div class="main-container">
+
+        <div class="row">
+            <!--Empty column-->
+            <div class="col-md-1"></div>
+            <!-- This is our information container with info on top and links on bottom -->
+            <div class="col-md-5" id="content-card">
+                <div class="card purple">
+                    <div id="image"></div>
+                    <div class="card-body">
+                        <h5 class="card-title" id="eventName">Ticket Master Info</h5>
+                        <p class="card-text" id="info"></p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item purple" id="venue"></li>
+                        <li class="list-group-item purple" id="city"></li>
+                        <li class="list-group-item purple" id="date"></li>
+                    </ul>
+                    <!-- Links to Wikipida and Ticketmaster-->
+                    <div class="card-body text-center">
+                        <a href="" class="card-link" id="wiki">Link to band Wiki</a>
+                        <a href="" class="card-link" id="getTix" target="_blank">Get Tickets</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-5">
+                <div class="row">
+                    <p><b>Explore Previous Searches: </b></p>
+                    <div id="artist-buttons">
+         
+
+                    </div>
+                    <input type="button" id="reset" value="Clear Buttons">
+                </div>
+                <div class="row">
+                    <div id="map"></div>
+                </div>
             </div>
         </div>
     </div>

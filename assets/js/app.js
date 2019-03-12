@@ -8,6 +8,7 @@ $("#search-form").on("submit", function (event) {
     console.log(storedArtist);
     window.location.assign("main.html");
 })
+
 //get info from local storage and populate on the main page
 var citySearch = localStorage.getItem("city");
 var keyword = localStorage.getItem("artist");
@@ -16,8 +17,8 @@ var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + 
 //make api request
 ajaxCall();
 
-
-
+var url = "https://en.wikipedia.org/wiki/" + keyword
+  $("#wiki").attr({"href": url, "target": "_blank" })
 
 var venue = "";
 
@@ -55,8 +56,7 @@ function ajaxCall() {
         url: apiUrl,
         method: "GET"
     }).then(function (response) {
-        console.log(response._embedded)
-        console.log(response.page.totalPages);
+        console.log(response);
 
         if (response.page.totalPages === 0) {
             $('#exampleModalCenter').modal();
@@ -67,7 +67,7 @@ function ajaxCall() {
             $("#content-card").show();
             $("#map").show();
             var eventsArray = response._embedded.events;
-
+            console.log(response);
 
             //get the event name and put it in a p tag:
             var event = $("<h2>").text(eventsArray[0].name)
@@ -125,7 +125,6 @@ function ajaxCall() {
             //get info about event
             var info = $("<p>").text(eventsArray[0].info)
             $("#info").append(info)
-
             initMap();
         }
     })

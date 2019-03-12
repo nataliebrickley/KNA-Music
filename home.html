@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>KNA Home Page</title>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--CSS-->
+    <link rel = "stylesheet" href="assets/css/style.css">
+    <!--Jquery-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!--Moment.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <!--Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+</head>
+<body class="home">
+    <!--nav bar-->
+    <nav class="navbar">
+            <a class="navbar-brand">KNA MUSIC</a>
+        </nav>
+    <!--main content-->
+    <div class="container">
+        <div class = "row">
+            <div class="col-md-6 welcome text-center">
+                <h1>Explore Events from Your Favorite Artists!</h1>
+                <input class="form-control mr-sm-2" type="search" placeholder="Search Artist" aria-label="Search" id="artist">
+                <input class="form-control mr-sm-2" type="search" placeholder="City" aria-label="Search" id="citySearch">
+                <input id="homeSearch" type="button"  value="Search" />
+            </div>
+        </div>
+    </div>
+    <!--JS-->
+    <script src="assets/js/firebase.js"></script>
+    <script src="assets/js/app.js"></script> 
+</body>
+</html>
