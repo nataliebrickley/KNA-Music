@@ -8,6 +8,7 @@ $("#homeSearch").on("click", function (event) {
     console.log(storedArtist);
     window.location.assign("index.html");
 })
+
 //get info from local storage and populate on the main page
 var citySearch = localStorage.getItem("city");
 var keyword = localStorage.getItem("artist");
@@ -16,8 +17,8 @@ var apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + 
 //make api request
 ajaxCall();
 
-
-
+var url = "https://en.wikipedia.org/wiki/" + keyword
+  $("#wiki").attr({"href": url, "target": "_blank" })
 
 var venue = "";
 
@@ -55,7 +56,7 @@ function ajaxCall() {
         url: apiUrl,
         method: "GET"
     }).then(function (response) {
-        console.log(response.page.totalPages);
+        console.log(response);
 
         if (response.page.totalPages === 0) {
             $('#exampleModalCenter').modal();

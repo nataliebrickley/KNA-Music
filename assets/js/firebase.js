@@ -34,6 +34,7 @@ $("#submit").on("click", function (event) {
 
   // grabs user input
   var artist = $("#artist").val().trim();
+  wikiLink(artist)
   var city = $("#citySearch").val();
   var newArtist = {
     name: artist,
@@ -58,6 +59,7 @@ $(document).on("click", "#buttonInfo", function () {
   $("#map").empty();
   citySearch = $(this).attr("data-city")
   keyword = $(this).attr("data-artist")
+  wikiLink(keyword);
   console.log(keyword)
   console.log(citySearch)
   apiKey = "3mMDHc6bID67MAw2IOA8EkaoYav83WWr";
@@ -72,4 +74,7 @@ $(document).on("click", "#reset", function() {
 database.ref().on("child_removed", function(snap) {
   $("#artist-buttons").empty();
 });
-
+function wikiLink(artist) {
+  var url = "https://en.wikipedia.org/wiki/" + artist
+  $("#wiki").attr({"href": url, "target": "_blank" })
+}
