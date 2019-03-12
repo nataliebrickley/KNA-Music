@@ -115,7 +115,7 @@ function ajaxCall() {
             var p = $("<p>").html("<b>Date:</b> " + formatDate + " at " + formatTime)
             $('#date').append(p);
             //seat map url:
-            var seatMap = $("<a>").attr({ "href": eventsArray[0].seatmap.staticUrl, "target": "_blank" }).text("Seat Map")
+            var seatMap = $("<a>").attr({ "href": eventsArray[0].seatmap.staticUrl, "target": "_blank", "class": "seatMap" }).text("Seat Map")
             $("#venue").append(seatMap)
             //get ticketmaster url
             var tickets = eventsArray[0].url
