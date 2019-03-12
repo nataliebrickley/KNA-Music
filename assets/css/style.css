@@ -64,14 +64,15 @@ img {
 }
 .welcome {
     margin: 0 auto;
-    margin-top: 40px;
+    margin-top: 15vh;
     background: rgba(256, 256, 256, .7);
     padding: 10px;
     border-radius: 2%;
-    align-content: center
+    text-align: center
 }
 .welcome input {
-    margin: 10px auto;
+    margin-left: 12.5%;
+    margin-top: 15px;
     width: 75%;
 }
 .welcome #submit{
@@ -95,4 +96,17 @@ img {
     border-radius: 10px;
     background: #251e3e
 }
-
+#reset {
+    background: red;
+    color: white;
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px; 
+    border-radius: 10px;
+    
+}
+.home {
+    background: url("https://ak5.picdn.net/shutterstock/videos/4863305/thumb/1.jpg");
+    height: 100vh;
+    background-size: cover
+}
