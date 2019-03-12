@@ -10,13 +10,13 @@ var config = {
 firebase.initializeApp(config);
 var database = firebase.database();
 
-
+// when new child is added it add to database
 database.ref().on("child_added", function (snapshot) {
   // prevents the page from refreshing when clicked
   event.preventDefault();
 
 // These are the added buttons
-  var performer = snapshot.val().name;
+  //var performer = snapshot.val().name;
   // var newButton = snapshot.text(performer);
   var p = $("<button id= buttonInfo>").text(snapshot.val().name)
 
@@ -29,7 +29,7 @@ database.ref().on("child_added", function (snapshot) {
 
 
 // adding artist Button 
-$("#submit").on("click", function (event) {
+$("#nav-form").on("submit", function (event) {
   //event.preventDefault();
 
   // grabs user input
@@ -58,17 +58,18 @@ $(document).on("click", "#buttonInfo", function () {
   $("#map").empty();
   citySearch = $(this).attr("data-city")
   keyword = $(this).attr("data-artist")
-  console.log(keyword)
-  console.log(citySearch)
+  //console.log(keyword)
+  //console.log(citySearch)
   apiKey = "3mMDHc6bID67MAw2IOA8EkaoYav83WWr";
   apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + keyword + "&city=" + citySearch + "&apikey=" + apiKey
   ajaxCall()
 });
-
+ 
+// this resets the buttion list and database
 $(document).on("click", "#reset", function() {
   database.ref().remove();
 });
-
+// updating the page
 database.ref().on("child_removed", function(snap) {
   $("#artist-buttons").empty();
 });
