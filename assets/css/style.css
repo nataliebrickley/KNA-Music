@@ -6,12 +6,13 @@ body{
     
 }
 .purple {
-    background: #451e3e;
+    background: rgb(22, 2, 38 , .8);
     color: white;
 }
-/* .col-sm-4 {
-    float: left;
-} */
+.purple li {
+    background: rgb(22, 2, 38 , 0);
+    color: white;
+}
 .artist-buttons{
     float: right;
 }
@@ -28,10 +29,11 @@ img {
  #map{
     position: relative;
     top: 50px;
-    height: 450px;
-    width: 450px;
+    height: 400px;
+    width: 400px;
     border: 5px solid black;
     border-radius: 10px;
+    margin: 0 auto;
  }
  .row {
      margin: 0 auto;
@@ -49,12 +51,15 @@ img {
     color: white;
     border: 1px solid white;
 }
-.card-link {
+.card-link, .seatMap {
     background:	 #163277;
     color: white;
     padding: 5px;
     text-align: center;
     display: inline-block;
+}
+.seatMap {
+    margin-left: 38%;
 }
 .card-link:hover {
     color: navajowhite;
@@ -82,7 +87,7 @@ img {
 
 
 #buttonInfo {
-    background: #10377a;
+    background: #590555;
     color: white;
     border: 1px solid black;
     padding: 5px;
@@ -97,7 +102,7 @@ img {
     background: #251e3e
 }
 #reset {
-    background: red;
+    background:#680e31;
     color: white;
     border: 1px solid black;
     padding: 5px;
@@ -106,7 +111,9 @@ img {
     
 }
 .home {
-    background: url("https://ak5.picdn.net/shutterstock/videos/4863305/thumb/1.jpg");
-    height: 100vh;
-    background-size: cover
+    background: url("https://ak5.picdn.net/shutterstock/videos/4863305/thumb/1.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
