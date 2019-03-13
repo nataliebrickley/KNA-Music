@@ -1,12 +1,12 @@
 // Send info to Local storage and link to the main page 
-$("#search-form").on("submit", function (event) {
+$("#homeSearch").on("click", function (event) {
     event.preventDefault();
     var storedArtist = $("#artist").val();
     var storedCity = $("#citySearch").val();
     localStorage.setItem("artist", storedArtist);
     localStorage.setItem("city", storedCity);
     console.log(storedArtist);
-    window.location.assign("main.html");
+    window.location.assign("index.html");
 })
 
 //get info from local storage and populate on the main page
@@ -26,7 +26,7 @@ var venue = "";
 
 
 //when the user clicks the submit button...
-$("#nav-form").on("submit", function (event) {
+$("#submit").on("click", function (event) {
     //prevent the page from refreshing
     event.preventDefault()
     //clear previous input results:
@@ -98,7 +98,7 @@ function ajaxCall() {
             latitude = parseFloat(eventsArray[0]._embedded.venues[0].location.latitude);
             longitude = parseFloat(eventsArray[0]._embedded.venues[0].location.longitude);
             venueName = eventsArray[0]._embedded.venues[0].name;
-            //console.log("latitdue: " + latitude + " Longitude: " + longitude);
+            console.log("latitdue: " + latitude + " Longitude: " + longitude);
             venue.attr("id", "venue");
             $("#venue").append(venue);
             //get the city, put it in a p tag, and append to the page:
@@ -111,7 +111,6 @@ function ajaxCall() {
             var formatDate = moment(date).format("MMMM Do YYYY")
             //get the time, and convert from military time to normal time
             var time = eventsArray[0].dates.start.localTime
-            // moment.js starts here
             var formatTime = moment(time, 'HH:mm').format('hh:mm a')
             //append date/time to the page
             var p = $("<p>").html("<b>Date:</b> " + formatDate + " at " + formatTime)
@@ -127,5 +126,7 @@ function ajaxCall() {
             $("#info").append(info)
             initMap();
         }
+        //access the events array
+
     })
 }
