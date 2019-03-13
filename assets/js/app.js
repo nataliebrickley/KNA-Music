@@ -1,5 +1,5 @@
 // Send info to Local storage and link to the main page 
-$("#homeSearch").on("click", function (event) {
+$("#index-form").on("submit", function (event) {
     event.preventDefault();
     var storedArtist = $("#artist").val();
     var storedCity = $("#citySearch").val().trim().split(",")[0];
@@ -26,7 +26,7 @@ var venue = "";
 
 
 //when the user clicks the submit button...
-$("#submit").on("click", function (event) {
+$("#nav-form").on("submit", function (event) {
     //prevent the page from refreshing
     event.preventDefault()
     //clear previous input results:
