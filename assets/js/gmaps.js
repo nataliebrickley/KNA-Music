@@ -1,16 +1,4 @@
 
-
-
-// centerMapOnVenue
-// inputs
-// latitude
-// longitude
-// side effects
-// update the map with new center point
-// define lat and lng variables
-// set lat from ticket master venue
-// set lng from ticket master venue
-// call google maps fn with lat lng
 // Google Maps API
 var map;
 var latitude = 32.715;
@@ -18,9 +6,7 @@ var longitude = -117.161;
 var myLatLng = { lat: latitude, lng: longitude};
 var venueName = 'San Diego';
 
-// center maps on venue when ....
-// ... the user clicks on the venue name
-// $(document).on("click", "#venue", function () {
+// center maps on venue 
 console.log("lat: " + latitude + "lng: " + longitude);
 // Initialize the map.
 var map;

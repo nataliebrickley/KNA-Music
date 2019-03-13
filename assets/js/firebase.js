@@ -84,6 +84,7 @@ $(document).on("click", "#reset", function() {
 database.ref().on("child_removed", function(snap) {
   $("#artist-buttons").empty();
 });
+
 function wikiLink(artist) {
   var url = "https://en.wikipedia.org/wiki/" + artist
   $("#wiki").attr({"href": url, "target": "_blank" })
