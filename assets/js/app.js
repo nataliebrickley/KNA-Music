@@ -1,5 +1,5 @@
 // Send info to Local storage and link to the main page 
-$("#homeSearch").on("click", function (event) {
+$("#index-form").on("submit", function (event) {
     event.preventDefault();
     var storedArtist = $("#artist").val();
     var storedCity = $("#citySearch").val().trim().split(",")[0];

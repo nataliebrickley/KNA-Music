@@ -27,9 +27,11 @@
         <div class = "row">
             <div class="col-md-6 welcome text-center">
                 <h1>Explore Events from Your Favorite Artists!</h1>
-                <input class="form-control mr-sm-2" type="search" placeholder="Search Artist" aria-label="Search" id="artist">
-                <input class="form-control mr-sm-2" type="search" placeholder="City" aria-label="Search" id="citySearch">
-                <input id="homeSearch" type="button"  value="Search" />
+                <form id="index-form">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search Artist" aria-label="Search" id="artist" required>
+                    <input class="form-control mr-sm-2" type="search" placeholder="City" aria-label="Search" id="citySearch">
+                    <input id="homeSearch" type="submit"  value="Search" />
+                </form>
             </div>
         </div>
     </div>
