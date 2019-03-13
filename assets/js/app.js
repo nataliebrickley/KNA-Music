@@ -6,7 +6,7 @@ $("#homeSearch").on("click", function (event) {
     localStorage.setItem("artist", storedArtist);
     localStorage.setItem("city", storedCity);
     console.log(storedArtist);
-    window.location.assign("index.html");
+    window.location.assign("main.html");
 })
 
 //get info from local storage and populate on the main page
