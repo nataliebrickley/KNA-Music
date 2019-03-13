@@ -44,7 +44,8 @@ $("#submit").on("click", function (event) {
 
   // grabs user input
   var artist = $("#artist").val().trim();
-  wikiLink(artist)
+  if (artist !== '') {
+    wikiLink(artist)
   var city = $("#citySearch").val().trim().split(",")[0];
   var newArtist = {
     name: artist,
@@ -52,6 +53,8 @@ $("#submit").on("click", function (event) {
   }
   // uploads information to firebase
   database.ref().push(newArtist);
+  }
+  
 
   //console.log(newArtist.name)
 
