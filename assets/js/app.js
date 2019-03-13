@@ -2,11 +2,11 @@
 $("#homeSearch").on("click", function (event) {
     event.preventDefault();
     var storedArtist = $("#artist").val();
-    var storedCity = $("#citySearch").val();
+    var storedCity = $("#citySearch").val().trim().split(",")[0];
     localStorage.setItem("artist", storedArtist);
     localStorage.setItem("city", storedCity);
     console.log(storedArtist);
-    window.location.assign("index.html");
+    window.location.assign("main.html");
 })
 
 //get info from local storage and populate on the main page
@@ -40,7 +40,8 @@ $("#submit").on("click", function (event) {
 
 
     //get the search input and create api url
-    citySearch = $("#citySearch").val().trim()
+    citySearch = $("#citySearch").val().trim().split(",")[0]
+    console.log(citySearch)
     keyword = $("#artist").val().trim()
     apiKey = "3mMDHc6bID67MAw2IOA8EkaoYav83WWr";
     apiUrl = "https://app.ticketmaster.com/discovery/v2/events.json?keyword=" + keyword + "&city=" + citySearch + "&radius=1000" + "&apikey=" + apiKey

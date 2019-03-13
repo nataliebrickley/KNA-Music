@@ -25,3 +25,14 @@ function initMap() {
 // var script = $("<script scr='https://maps.googleapis.com/maps/api/js?key=AIzaSyBnIs9SWvCoCykKiXFp_MvafcDjcSrh0DU&callback=initMap' async defer>");
 // script.appendTo("#gmap-script");
 // });
+
+
+//test
+function autofillCities() {
+    var options = {
+        types: ['(cities)'],
+        componentRestrictions: {country: "us"}
+       };
+    var input = document.getElementById("citySearch");
+    var autocomplete = new google.maps.places.Autocomplete(input, options);
+}

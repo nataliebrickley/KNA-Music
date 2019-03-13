@@ -9,11 +9,21 @@ var config = {
 };
 firebase.initializeApp(config);
 var database = firebase.database();
-
-
+//test
+var citySearch = localStorage.getItem("city");
+var keyword = localStorage.getItem("artist");
+wikiLink(keyword)
+var newArtist = {
+  name: keyword,
+  location: citySearch
+}
+console.log(newArtist)
+database.ref().push(newArtist);
+localStorage.clear()
+//
 database.ref().on("child_added", function (snapshot) {
   // prevents the page from refreshing when clicked
-  event.preventDefault();
+  //event.preventDefault();
 
 // These are the added buttons
   var performer = snapshot.val().name;
@@ -35,7 +45,7 @@ $("#submit").on("click", function (event) {
   // grabs user input
   var artist = $("#artist").val().trim();
   wikiLink(artist)
-  var city = $("#citySearch").val();
+  var city = $("#citySearch").val().trim().split(",")[0];
   var newArtist = {
     name: artist,
     location: city
